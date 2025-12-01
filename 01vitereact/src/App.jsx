@@ -1,8 +1,12 @@
+import Chai from "./Chai.jsx";
+
 function App() {
-
-
   return (
-    <h1>React with vite</h1>
+    <>
+      <Chai />
+      <h1>Helllllo</h1>
+      <p>Test para</p>
+    </>
   )
 }
 
