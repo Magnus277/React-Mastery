@@ -1,6 +1,3 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import useCurrencyInfo from "./hooks/useCurrencyInfo.js";
 import InputBox  from "./components/InputBox";
 import "./App.css";
@@ -38,7 +35,7 @@ function App() {
         <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
           <form
             onSubmit={(e) => {
-              e.preventDefault();
+              e.preventDefault(); // wont be sent to any url
               convert()
             }}
           >
@@ -68,7 +65,7 @@ function App() {
               currencyOptions={options}
               onCurrencyChange={(currency) => setTo(currency)}
               selectCurrency={to}
-              amountDisable
+              amountDisable //true
               />
             </div>
             <button

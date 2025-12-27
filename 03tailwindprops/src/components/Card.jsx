@@ -1,6 +1,4 @@
-import React from 'react'
-
-function Card({username="Deb"}) {
+function Card({username="Deb"}) { // destructuring username from props
   console.log(username);
   
   return (

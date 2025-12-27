@@ -1,4 +1,5 @@
 import conf from "../conf/conf.js";
+// import { useEffect } from "react";
 import { Client, Account, ID } from "appwrite";
 
 export class AuthService {
@@ -13,50 +14,41 @@ export class AuthService {
   }
 
   async createAccount({ email, password, name }) {
-    try {
-      const userAccount = await this.account.create({
-        userId: ID.unique(),
-        email,
-        password,
-        name,
-      });
-      if (userAccount) {
-        // call another method
-        return this.login({email,password});
-      } else {
-        return userAccount;
-      }
-    } catch (error) {
-      throw error;
+    const userAccount = await this.account.create({
+      userId: ID.unique(),
+      email,
+      password,
+      name,
+    });
+    if (userAccount) {
+      // log them in instantly
+      return this.login({email,password});
+    } else {
+      return userAccount;
     }
   }
 
   async login( { email, password }) {
+    return await this.account.createEmailPasswordSession({ email, password });
+  }
+
+  async logout() {
     try {
-        return await this.account.createEmailPasswordSession({ email, password });
+        await this.account.deleteSession({
+        sessionId: 'current'
+        })
     } catch (error) {
-        throw error;
+      console.log("Appwrite service :: logout :: error", error);
     }
   }
 
   async getCurrentUser() {
     try {
-        return await this.account.get();
+      return await this.account.get();
     } catch (error) {
-        console.log("Appwrite service :: getCurrentUser :: error", error);
-      }
-      
+      console.log("Appwrite service :: getCurrentUser :: error", error);
       return null;
     }
-    
-    async logout() {
-      try {
-          await this.account.deleteSession({
-          sesssionId: 'current'
-          })
-      } catch (error) {
-        console.log("Appwrite service :: logout :: error", error);
-      }
   }
 }
 

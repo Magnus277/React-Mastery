@@ -10,8 +10,8 @@ function TodoForm() {
 
       if(!todo) return 
 
-      addTodo({todo, completed: false})
-      setTodo("")
+      addTodo({todo, completed: false}) //since the object is spread in the function definition, we need to pass an object, todo means we are passing the todo message and the completed check.
+      setTodo("") //empty the form field after adding.
     }
 
   return (

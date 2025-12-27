@@ -10,8 +10,8 @@ function customRender(reactElement, container) {
     domElement.innerHTML = reactElement.children
 
     for (const prop in reactElement.props) {
-      if(prop === 'children') continue;
-      domElement.setAttribute(prop, reactElement.props[prop])
+        if(prop === 'children') continue;
+        domElement.setAttribute(prop, reactElement.props[prop])
     }
 
     container.appendChild(domElement)
@@ -19,15 +19,15 @@ function customRender(reactElement, container) {
 
 
 const reactElement = {
-    type: 'a',
-    props: {
+    type: 'a', // anchor tag here
+    props: { // properties of that tag as an object
         href: 'https://google.com',
         target: '_blank'
     },
-    children: 'Click me to visit google'
+    children: 'Click me to visit google' //the innerhtml
 }
 
 const mainContainer = document.querySelector('#root')
 
 
-customRender(reactElement, mainContainer)
+customRender(reactElement, mainContainer) // kya inject karu? -> reactElement aur kaha inject karu ? -> mainContainer

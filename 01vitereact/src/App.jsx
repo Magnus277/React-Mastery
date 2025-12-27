@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Chai />
-      <h1>Helllllo {username}</h1>
+      <h1>Helllllo {username}</h1>  // {username} this is called evaluated expression, so cant write any conditionals inside {}
       <p>Test para</p>
     </>
   )

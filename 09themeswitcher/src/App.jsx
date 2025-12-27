@@ -1,6 +1,4 @@
 import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
 import "./App.css";
 import { ThemeProvider } from "./context/theme";
 import { useEffect } from "react";
@@ -8,7 +6,6 @@ import ThemeBtn from "./components/ThemeBtn";
 import Card from "./components/Card";
 
 function App() {
-  // const [count, setCount] = useState(0);
   const [themeMode, setThemeMode] = useState("light")
 
   const lightTheme = () => {
@@ -35,7 +32,6 @@ function App() {
 
         <div className="w-full max-w-sm mx-auto">
           <Card />
-
         </div>
       </div>
     </div>

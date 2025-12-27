@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import authService from "../appwrite/auth";
+import authService from "../appwrite/auth.js";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../store/authSlice";
+import { login } from "../store/authSlice.js";
 import { Button, Input, Logo } from "./index.js";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 
-function Signup() {
+function SignUp() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const dispatch = useDispatch();
@@ -90,4 +90,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default SignUp;

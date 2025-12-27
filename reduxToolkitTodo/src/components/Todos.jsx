@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeTodo } from "../features/todo/todoSlice.js";
 
 function Todos() {
-  const todos = useSelector((state) => state.todos);
+  const todos = useSelector((state) => state.todos); //we can take out any value from the store using selector, “Go to the Redux store, pick ONLY the todos part of the data, and give it to this component.”
   const dispatch = useDispatch();
   return (
     <>

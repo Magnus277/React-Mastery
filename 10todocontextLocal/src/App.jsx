@@ -5,7 +5,6 @@ import TodoItem from "./components/TodoItem.jsx";
 import "./App.css";
 
 function App() {
-  // const [count, setCount] = useState(0);
 
   const [todos,setTodos] = useState([])
 
@@ -18,7 +17,7 @@ function App() {
   }
 
   const deleteTodo = (id) => {
-      setTodos((prev) => prev.filter((todo) => todo.id !== id))
+      setTodos((prev) => prev.filter((todo) => todo.id !== id)) // filter works on true value, if todo.id !== id is false, then the todo doesnt get added to the todos array
   }
 
   const toggleComplete = (id) => {
@@ -44,11 +43,10 @@ function App() {
           <h1 className="text-2xl font-bold text-center mb-8 mt-2">
             Manage Your Todos
           </h1>
-          <div className="mb-4">{/* Todo form goes here */}
+          <div className="mb-4">
             <TodoForm />
           </div>
           <div className="flex flex-wrap gap-y-3">
-            {/*Loop and Add TodoItem here */}
             {todos.map((todo) => (
               <div key={todo.id} className='w-full'>
                   <TodoItem todo={todo}/>

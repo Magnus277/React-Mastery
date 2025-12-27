@@ -8,7 +8,7 @@ function AddTodo() {
 
   const addTodoHandler = (e) => {
     e.preventDefault();
-    dispatch(addTodo(input));
+    dispatch(addTodo(input)); //dispatch uses a reducer to make some changes in the store, input is the action.payload here
     setInput("");
   };
 

@@ -8,7 +8,7 @@ export const TodoContext = createContext({
         completed: false,
       },
     ],
-    addTodo: (todo) => {},
+    addTodo: (todo) => {}, //functionality gets written at app.jsx
     updateTodo: (id, todo) => {},
     deleteTodo: (id) => {},
     toggleComplete: (id) => {},
